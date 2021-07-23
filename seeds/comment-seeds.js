@@ -22,7 +22,7 @@ const commentData = [{
     },
 ];
 
-// edit more than one record at a him by utilizing bulkCreate
+// edit more than one record at a time by utilizing bulkCreate
 // we will use the above array of objects to seed our database with sample comments
 const seedComments = () => Comment.bulkCreate(commentData);
 
