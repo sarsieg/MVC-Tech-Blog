@@ -92,3 +92,30 @@ router.post('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// when user clicks 'update' button replace post-id data with new data
+router.put('/:id', withAuth, (req, res) => {
+    // update multiple instances that match 
+    Post.update({
+            title: req.body.title,
+            content: req.body.content
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
