@@ -77,3 +77,18 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// after a user submits a new post connect user session then get above
+router.post('/', withAuth, (req, res) => {
+    // creates new post model instance and calls save on it
+    Post.create({
+            title: req.body.title,
+            content: req.body.content,
+            user_id: req.session.user_id
+        })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
