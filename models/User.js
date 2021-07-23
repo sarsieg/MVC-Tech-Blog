@@ -49,5 +49,13 @@ User.init({
             return updatedUserData;
         }
     },
-    // pass 
-})
+    // pass in our imported sequelize connection instance 
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user'
+});
+module.exports = User;
+
+console.log(module);
