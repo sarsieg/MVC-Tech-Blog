@@ -27,3 +27,21 @@ const sess = {
         db: sequelize
     })
 };
+
+// creates a middleware for our session object
+// this will also have access to the route events the user triggers
+app.use(session(sess));
+
+// inform express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening on PORT: ${PORT}!`));
+});
