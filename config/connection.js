@@ -9,7 +9,10 @@ if (process.env.JAWSDB_URL) {
     console.log('jaws');
 } else {
     sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
-        host: 'localhost',
+        host: 's465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	',
+        username: 'ba1fec6oihtkjp4y',
+        password: 'srk6wjokivt8mdx8',
+        database: 'o4qb3cszfi5ndjkv',
         dialect: 'mysql',
         port: 3306
     });
