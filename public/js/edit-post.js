@@ -11,7 +11,7 @@ async function editFormHandler(event) {
     ];
 
 
-    const responce = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             post_id: id,
@@ -24,7 +24,7 @@ async function editFormHandler(event) {
     });
 
     // once our route is received properly re-direct the user to the dashboard
-    if (responce.ok) {
+    if (response.ok) {
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText);

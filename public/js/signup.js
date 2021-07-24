@@ -7,7 +7,7 @@ async function signupFormHandler(event) {
     const password = document.querySelector('#password-login').value.trim();
 
     if (username && password) {
-        const responce = await fetch(`/api/users`, {
+        const response = await fetch(`/api/users`, {
             method: 'POST',
             body: JSON.stringify({
                 username,
@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
         });
 
         // once our route is received properly re-direct the user to the dashboard
-        if (responce.ok) {
+        if (response.ok) {
             console.log('success');
 
             document.location.replace('/dashboard');

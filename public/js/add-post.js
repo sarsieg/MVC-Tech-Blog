@@ -7,7 +7,7 @@ async function newFormHandler(event) {
     const content = document.querySelector('textarea[name="content"]').value;
 
     // post stringified data to the post-routes folder of our routes
-    const responce = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
             title,
@@ -19,7 +19,7 @@ async function newFormHandler(event) {
     });
 
     // once our route is received properly re-direct the user to the dashboard
-    if (responce.ok) {
+    if (response.ok) {
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText);

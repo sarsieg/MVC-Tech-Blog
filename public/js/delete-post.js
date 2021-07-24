@@ -7,7 +7,7 @@ async function deleteFormHandler(event) {
     ];
 
     // post stringified data to the post-routes folder of our routes
-    const responce = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
             post_id: id
@@ -18,7 +18,7 @@ async function deleteFormHandler(event) {
     });
 
     // once our route is received properly re-direct the user to the dashboard
-    if (responce.ok) {
+    if (response.ok) {
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText);

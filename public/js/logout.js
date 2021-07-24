@@ -5,7 +5,7 @@ async function logout() {
     });
 
     // once our route is received properly re-direct the user to the dashboard
-    if (responce.ok) {
+    if (response.ok) {
         document.location.replace('/');
     } else {
         alert(response.statusText);
