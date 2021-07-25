@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // set up handlebars.js engine instance with custom helpers
-const hbs = exphbs({ helpers });
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     // requires to sign the session ID cookie
