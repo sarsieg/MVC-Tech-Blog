@@ -56,6 +56,8 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 ### Live Link
 [Live Link](https://sarah-mvc-tech-blog.herokuapp.com/)
 
+![Screenshot](/images/mvcpic.png/)
+
 ### Installation
 In the root directory of the project, type in the terminal command line 'npm i' to download the dependencies. Make sure you have a database you can run the seeds into which are sample rows for each model, or table, to give you starter data. This is hosted on Heroku and also utilizes JawsDB. 
 
