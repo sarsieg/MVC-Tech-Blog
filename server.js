@@ -15,7 +15,7 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
     // requires to sign the session ID cookie
-    secret: 'Mary goes robblin with marigold goblins',
+    secret: 'ilovepooh',
     // specifies number (ms) to use when calculating expires set cookie attribue this is the session id cookie
     cookie: { maxAge: null },
     resave: false,
